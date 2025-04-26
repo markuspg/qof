@@ -9,6 +9,12 @@ project('qof',
 )
 
 qof_current = '2'
+
+sql_current = '1'
+sql_revision = '2'
+sql_age = '0'
+lib_sql_vers = sql_current + ':' + sql_revision + ':' + sql_age
+
 package = meson.project_name()
 soname = qof_current
 
