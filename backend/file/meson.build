@@ -17,6 +17,7 @@ library('libqof_backend_qsf',
   c_args: [
     '-DLOCALE_DIR="' + join_paths(get_option('prefix'), get_option('localedir')) + '"',
     '-DQSF_SCHEMA_DIR="' + join_paths(get_option('prefix'), get_option('datadir'), 'xml', 'qof', 'qsf') + '"',
+    '-DQSF_SCHEMA_DIR="' + qsf_schema_dir + '"',
     '-D_XOPEN_SOURCE',
   ],
   dependencies: libqof_backend_qsf_deps,

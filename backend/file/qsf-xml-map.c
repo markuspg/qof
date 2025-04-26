@@ -21,6 +21,8 @@
  *  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
  */
 
+#define _XOPEN_SOURCE 700
+
 #include "config.h"
 #include <glib.h>
 #include <libxml/xmlversion.h>
@@ -28,6 +30,7 @@
 #include <libxml/tree.h>
 #include <libxml/parser.h>
 #include <libxml/xmlschemas.h>
+#include <time.h>
 #include "qof.h"
 #include "qof-backend-qsf.h"
 #include "qsf-xml.h"

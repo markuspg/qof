@@ -25,10 +25,14 @@ glib_dep = dependency('glib-2.0', version: glib_req)
 gmodule_dep = dependency('gmodule-2.0', version: glib_req)
 gobject_dep = dependency('gobject-2.0', version: glib_req)
 
+qsf_schema_dir = join_paths(get_option('datadir'), 'xml', 'qof', 'qsf')
+
 conf_data = configuration_data()
 conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
 conf_data.set_quoted('QOF_LIB_DIR', join_paths(get_option('libdir'), meson.project_name() + soname))
+conf_data.set_quoted('LOCALE_DIR', get_option('localedir'))
 conf_data.set_quoted('PACKAGE', meson.project_name())
+conf_data.set_quoted('QOF_LIB_DIR', join_paths(get_option('libdir'), meson.project_name() + soname))
 configure_file(
   configuration: conf_data,
   output: 'config.h',
