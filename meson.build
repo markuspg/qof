@@ -15,8 +15,9 @@ sql_revision = '2'
 sql_age = '0'
 lib_sql_vers = sql_current + ':' + sql_revision + ':' + sql_age
 
-package = meson.project_name()
 soname = qof_current
+
+package = meson.project_name()
 
 glib_req = '>= 2.9.0'
 
@@ -26,6 +27,7 @@ gobject_dep = dependency('gobject-2.0', version: glib_req)
 
 conf_data = configuration_data()
 conf_data.set_quoted('GETTEXT_PACKAGE', meson.project_name())
+conf_data.set_quoted('QOF_LIB_DIR', join_paths(get_option('libdir'), meson.project_name() + soname))
 conf_data.set_quoted('PACKAGE', meson.project_name())
 configure_file(
   configuration: conf_data,
