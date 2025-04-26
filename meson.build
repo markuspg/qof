@@ -1,8 +1,11 @@
 project('qof',
   'c',
+  default_options : [
+    'c_std=gnu99',
+  ],
   license: 'GPL-2.0-or-later',
   meson_version: '>= 0.49',
-  version: '0.8.8',
+  version: '0.8.9',
 )
 
 qof_current = '2'
